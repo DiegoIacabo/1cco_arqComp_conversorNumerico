@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(36, 34, 34);
+    padding: 0 20px;
+    color: white;
+    border-bottom: 2px solid rgb(1, 163, 15);
+}
+
+.header a {
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.current {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.banner {
+    background-image: url("../assets/img/binary-background.jpg");
+    background-size: cover;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(4px);
+}
+
+.conversor {
+    background-color: rgb(36, 34, 34, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 350px;
+    border-radius: 25px;
+    border: solid 2px rgb(1, 163, 15);
+    margin: 20px;
+    color: white;
+}
+
+.subtitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada input {
+    width: 60%;
+}
+
+.entrada select {
+    width: 60%;
+}
+
+.entrada button {
+    width: 40%;
+    margin-top: 20px;
+}
+
+.calculadora {
+    background-color: rgb(36, 34, 34, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    border-radius: 25px;
+    border: solid 2px rgb(1, 163, 15);
+    margin: 20px;
+    color: white;
+}
+
+.footer {
+    background-color: rgb(36, 34, 34);
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+    /* height: 120px; */
+}
+
+.version {
+    display: flex;
+    align-items: center;
+}

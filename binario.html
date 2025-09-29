@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Numérico | Binário</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/icon/siteIcon.jpg">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Conversor de Sistemas Numéricos</h1>
+
+        <ul>
+            <li><a href="index.html">Decimal</a></li>
+            <li class="current"><a href="#">Binário</a></li>
+            <li><a href="octal.html">Octal</a></li>
+            <li><a href="hexa.html">Hexadecimal</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div class="titulo">
+                <h1>Sistema Binário</h1>
+            </div>
+
+            <div class="conversor">
+                <div class="subtitulo">
+                    <h2>Conversões</h2>
+                </div>
+                <div class="conteudo">
+                    <div class="entrada">
+                        <h3>Digite um número binário:</h3>
+                        <input id="bin1" type="text" placeholder="Ex: 11011">
+                        <button onclick="converterBinario()">Converter</button>
+                    </div>
+
+                    <div class="resultado">
+                        <h3>Resultados:</h3>
+                        <p>Octal:
+                            <span id="bin2"></span>
+                        </p>
+                        <p>Hexadecimal:
+                            <span id="bin3"></span>
+                        </p>
+                        <p>Decimal:
+                            <span id="bin4"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculadora">
+                <div class="subtitulo">
+                    <h2>Operações Aritméticas</h2>
+                </div>
+
+                <div class="conteudo">
+                    <div class="entrada">
+                        <h3>Digite o primeiro valor:</h3>
+                        <input type="text" id="ipt_v1" placeholder="Ex: 1010">
+                        <h3>Digite o segundo valor:</h3>
+                        <input type="text" id="ipt_v2" placeholder="Ex: 0101">
+                        <h3>Selecione a operação desejada:</h3>
+                        <select id="select_operacao">
+                            <option>Somar</option>
+                            <option>Subtrair</option>
+                            <option>Multiplicar</option>
+                            <option>Dividir</option>
+                        </select>
+                        <button onclick="calcularBinario()">Calcular</button>
+                    </div>
+
+                    <div class="resultado">
+                        <h3>Resultado:</h3>
+                        <span id="resultBinario"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="infos">
+            <p>Feito por Diego Iacabo</p>
+            <p>Contato: diego.iacabo@sptech.school</p>
+        </div>
+        <div class="version">
+            <p>v1.0.0</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function converterBinario() {
+        var binario = bin1.value;
+        var decimal = parseInt(binario, 2);
+
+        bin2.innerHTML = decimal.toString(8);
+        bin3.innerHTML = decimal.toString(16).toUpperCase();
+        bin4.innerHTML = decimal;
+    }
+
+    function calcularBinario() {
+        var v1 = parseInt(ipt_v1.value, 2);
+        var v2 = parseInt(ipt_v2.value, 2);
+        var operacao = select_operacao.value;
+        var resultado = 0;
+
+        if (operacao == 'Somar') {
+            resultado = (v1 + v2).toString(2);
+        } else if (operacao == 'Subtrair') {
+            resultado = (v1 - v2).toString(2);
+        } else if (operacao == 'Multiplicar') {
+            resultado = (v1 * v2).toString(2);
+        } else {
+            resultado = (v1 / v2).toString(2);
+        }
+
+        resultBinario.innerHTML = `${resultado}`
+    }
+</script>

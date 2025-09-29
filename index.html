@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Numérico | Decimal</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/icon/siteIcon.jpg">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Conversor de Sistemas Numéricos</h1>
+
+        <ul>
+            <li class="current"><a href="#">Decimal</a></li>
+            <li><a href="binario.html">Binário</a></li>
+            <li><a href="octal.html">Octal</a></li>
+            <li><a href="hexa.html">Hexadecimal</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div class="titulo">
+                <h1>Sistema Decimal</h1>
+            </div>
+
+            <div class="conversor">
+                <div class="subtitulo">
+                    <h2>Conversões</h2>
+                </div>
+                <div class="conteudo">
+                    <div class="entrada">
+                        <h3>Digite um número decimal:</h3>
+                        <input id="demo1" type="text" placeholder="Ex: 42">
+                        <button onclick="converter()">Converter</button>
+                    </div>
+                    <div class="resultado">
+                        <h3>Resultados:</h3>
+                        <p>Binário:
+                            <span id="demo4"></span>
+                        </p>
+                        <p>Octal:
+                            <span id="demo2"></span>
+                        </p>
+                        <p>Hexadecimal:
+                            <span id="demo3"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculadora">
+                <div class="subtitulo">
+                    <h2>Operações Aritméticas</h2>
+                </div>
+
+                <div class="conteudo">
+                    <div class="entrada">
+                        <h3>Digite o primeiro valor:</h3>
+                        <input type="text" id="ipt_v1" placeholder="Ex: 90">
+                        <h3>Digite o segundo valor:</h3>
+                        <input type="text" id="ipt_v2" placeholder="Ex 19">
+                        <h3>Selecione a operação desejada:</h3>
+                        <select id="select_operacao">
+                            <option>Somar</option>
+                            <option>Subtrair</option>
+                            <option>Multiplicar</option>
+                            <option>Dividir</option>
+                        </select>
+                        <button onclick="calcularDecimal()">Calcular</button>
+                    </div>
+
+                    <div class="resultado">
+                        <h3>Resultado:</h3>
+                        <span id="resultDecimal"></span>
+                        <!-- <p>Decimal:
+                        </p>
+                        <p>Binário:
+                            <span id="resultBinario"></span>
+                        </p>
+                        <p>Octal:
+                            <span id="resultOctal"></span>
+                        </p>
+                        <p>Hexadecimal:
+                            <span id="resultHexa"></span>
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="infos">
+            <p>Feito por Diego Iacabo</p>
+            <p>Contato: diego.iacabo@sptech.school</p>
+        </div>
+        <div class="version">
+            <p>v1.0.0</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function converter() {
+        var decimal = Number(demo1.value);
+
+        demo2.innerHTML = decimal.toString(8);
+        demo3.innerHTML = decimal.toString(16).toUpperCase();
+        demo4.innerHTML = decimal.toString(2);
+    }
+
+    function calcularDecimal() {
+        var v1 = Number(ipt_v1.value);
+        var v2 = Number(ipt_v2.value);
+        var operacao = select_operacao.value;
+        var resultado = 0;
+
+        if (operacao == 'Somar') {
+            resultado = v1 + v2;
+        } else if (operacao == 'Subtrair') {
+            resultado = v1 - v2;
+        } else if (operacao == 'Multiplicar') {
+            resultado = v1 * v2;
+        } else {
+            resultado = v1 / v2;
+        }
+
+        resultDecimal.innerHTML = `${resultado}`;
+        // resultBinario.innerHTML = `${resultado.toString(2)}`;
+        // resultOctal.innerHTML = `${resultado.toString(8)}`;
+        // resultHexa.innerHTML = `${resultado.toString(16).toUpperCase()}`;
+    }
+</script>
